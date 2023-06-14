@@ -1,0 +1,19 @@
+valid_data_path: ./data/data_p0.02_sd42_thr0.001_endoftext_cl64
+output_table_path: ./evaluation_outputs
+experiment:
+  toxicity_threshold: 0.001
+  number_of_samples: 50
+  prompt_source: 1
+condition_toxicity:
+- 1
+condition_sent:
+- 1
+models: # use these models for Main Experiment (best model comparisson)
+- name: M-TS
+  path: ./model/model_toxsen_p0.02_sd42_thr0.001_endoftext_cl64/checkpoint-1584
+hyperparameters:
+  top_p: 0.7
+  top_k: 0
+  max_length: 70
+  temperature: 1
+  no_repeat_ngram_size: 5

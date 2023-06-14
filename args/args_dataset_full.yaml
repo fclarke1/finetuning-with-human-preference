@@ -1,0 +1,6 @@
+dataset_save_path: ./data/  # where the created dataset will be saved
+data_percent: 0.02          # percent of total dataset we will use
+seed: 42                    # seed used to shuffle the dataset
+toxicity_threshold: 0.001   # threshold for toxic classifier
+context_length: 64          # max sentence length in tokens
+validation_size: 1000       # Number of sentences in validation set

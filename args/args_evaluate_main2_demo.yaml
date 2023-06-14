@@ -1,0 +1,27 @@
+valid_data_path: ./data/data_p0.02_sd42_thr0.001_endoftext_cl64
+output_table_path: ./evaluation_outputs
+experiment:
+  toxicity_threshold: 0.001
+  number_of_samples: 20
+  prompt_source: 1
+condition_toxicity:
+- 0
+- 1
+condition_sent:
+- 0
+- 1
+models: # use these models for Main Experiment (best model comparisson)
+- name: M-B
+  path: ./model/model_none_p0.02_sd42_thr0.001_endoftext_cl64/checkpoint-1584
+- name: M-T
+  path: ./model/model_tox_p0.02_sd42_thr0.001_endoftext_cl64/checkpoint-1584
+- name: M-S
+  path: ./model/model_sen_p0.02_sd42_thr0.001_endoftext_cl64/checkpoint-7128
+- name: M-TS
+  path: ./model/model_toxsen_p0.02_sd42_thr0.001_endoftext_cl64/checkpoint-1584
+hyperparameters:
+  top_p: 0.99
+  top_k: 0
+  max_length: 70
+  temperature: 1
+  no_repeat_ngram_size: 1

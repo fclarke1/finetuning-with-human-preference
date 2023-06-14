@@ -1,0 +1,29 @@
+valid_data_path: ./data/data_p0.02_sd42_thr0.001_endoftext_cl64
+output_table_path: ./evaluation_data/tables/Ezer/
+experiment:
+  toxicity_threshold: 0.001
+  number_of_samples: 400
+  prompt_source: 1
+condition_toxicity:
+- 1
+condition_sent:
+- 1
+models: # use these models for Extra Experiment ("more tokens" experiment)
+- name: M-TS1
+  path: ./model/model_toxsen_p0.02_sd42_thr0.001_endoftext_cl64/checkpoint-792
+- name: M-TS2
+  path: ./model/model_toxsen_p0.06_sd42_thr0.001_endoftext_cl64_hybrid/checkpoint-1584
+- name: M-TS3
+  path: ./model/model_toxsen_p0.06_sd42_thr0.001_endoftext_cl64_hybrid/checkpoint-2376
+- name: M-TS4
+  path: ./model/model_toxsen_p0.06_sd42_thr0.001_endoftext_cl64_hybrid/checkpoint-3168
+- name: M-TS5
+  path: ./model/model_toxsen_p0.06_sd42_thr0.001_endoftext_cl64_hybrid/checkpoint-3960
+- name: M-TS6
+  path: ./model/model_toxsen_p0.06_sd42_thr0.001_endoftext_cl64_hybrid/checkpoint-4752
+hyperparameters:
+  top_p: 0.7
+  top_k: 0
+  max_length: 70
+  temperature: 1
+  no_repeat_ngram_size: 1

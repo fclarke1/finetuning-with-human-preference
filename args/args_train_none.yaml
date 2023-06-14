@@ -1,0 +1,26 @@
+# CUSTOM DATASET
+override_dataset_load_path: False                         # if not using default dataset enter True here and enter the path below
+custom_dataset_load_path: enter_custom_dataset_path_here  # path to custom dataset
+
+# DATASET PARAMS - these are used to load the correct dataset if not using a custom one
+context_length: 64                  # max length of sentences in tokens (has to match dataset)
+tokenizer_load_path: ./tokenizer    # tokenizer used (should be the same for all models)
+seed: 42                            # seed used to create dataset
+data_percent: 0.02                  # total amount of data used to create dataset
+toxicity_threshold: 0.001           # toxicity threshold used to create dataset
+
+# MODEL TRAINING ARGS
+train_col: texts                # what are we finetuning on? choose from: [texts, texts_tox, texts_sentiment, texts_all_labels]
+model_finetuning_from: gpt2         # finetuning from this model - should almost always be gpt2
+device: cuda
+batch_size: 64
+epochs_num: 1
+max_number_of_checkpoints: 20
+save_strategy: steps
+save_num_steps: 792                 # 792 steps is half an epoch for 2% data
+logging_steps: 300                  # print an update during training every X steps
+is_from_checkpoint: False           # if continuing from a previously finetuned model enter True here with the same params as originally used to fine-tune it above
+
+# CUSTOME MODEL NAME
+override_model_name: False                        # enter True if you want a custome name to save the model down
+custom_model_name: enter_custom_model_name_here   # enter custom model_name here if using

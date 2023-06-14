@@ -1,0 +1,6 @@
+transformers
+datasets
+huggingface
+detoxify
+nltk
+cleantext
